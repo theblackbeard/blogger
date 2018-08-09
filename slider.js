@@ -5,15 +5,15 @@ $(document).ready(function(){
 			part: "snippet",
 			channelId: "UC6nTt2sWB7taW2LHF-O82vg",
 			order : "date",
-			maxResults: "3"
+			maxResults: "2"
 		}
 
 		$.ajax({
 			url: "https://www.googleapis.com/youtube/v3/search",
 			data: query
 		}).done(function(res){
-			
-					$("#video").append("<iframe width='560' height='315' src='https://www.youtube.com/embed/'"+res.items[0].id.videoId +"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>")
+
+					$("#video").append("<iframe width='560' height='315' src='https://www.youtube.com/embed/"+res.items[0].id.videoId +"' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 				
 				for(let i=1; i < res.items.length; i++)
 				{
